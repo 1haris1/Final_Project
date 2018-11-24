@@ -1,3 +1,6 @@
+*{
+    max-width: 100%;
+}
 #main {
     background-color: #c6c8ca;
 }
