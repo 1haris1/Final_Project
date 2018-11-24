@@ -1,0 +1,26 @@
+*{
+    font-family: 'Footlight MT Light',sans-serif;
+    max-width: 100%;
+    cursor: pointer;
+}
+header{
+    background-color: green;
+}
+header > nav{
+    height: 100px;
+    margin-bottom: 5px;
+    opacity: 0.6;
+}
+header .navbar-brand{
+    font-size: xx-large;
+}
+header .list{
+    font-size: large;
+}
+
+#pic{
+    max-width: 100%;
+    height: 480px;
+    background: url("../media/pic1000.jpg") no-repeat right;
+    background-size: cover;
+}
