@@ -24,23 +24,21 @@ header .list{
     background-size: cover;
     /*opacity: 0.7;*/
 }
-#Main-content {
-    margin: 0 0 0 33%;
-}
+
 #Main-content h1{
-    margin: 0 0 0 10%;
     color: #189834;
     font-size: 39px;
-    text-decoration-color: blanchedalmond;
     text-decoration: underline;
-    box-shadow: 9px 9px 20px 2px #105a20;
-    width: 13%;
 }
 #Main-content .user {
     margin-top: 65px;
 }
+#Main-content form button{
+    letter-spacing: 2px;
+    box-shadow: inset -4px -6px 20px 0 #b8da32;
+}
 #Main-content #forget{
-    color: lemonchiffon;
+    color: white;
     word-spacing: 3px;
     letter-spacing: 2px;
     line-height: 0;
@@ -54,22 +52,6 @@ header .list{
         height: 400px;
         background: url("../media/pic525.jpeg") no-repeat right;
         background-size: cover;
-        /*opacity: 0.7;*/
-    }
-    #Main-content {
-        margin: 0 0 0 14%;
-    }
-    #Main-content h1{
-        margin: 0 0 0 13%;
-        color: #189834;
-        font-size: 39px;
-        text-decoration-color: blanchedalmond;
-        text-decoration: underline;
-        box-shadow: 9px 9px 20px 2px #105a20;
-        width: 34%;
-    }
-    #Main-content #forget{
-        color: black;
     }
 
 }
