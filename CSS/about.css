@@ -1,37 +1,40 @@
 *{
     max-width: 100%;
 }
+
+header{
+    background-color: green;
+}
+
+header > nav{
+    height: 100px;
+    margin-bottom: 5px;
+    opacity: 0.6;
+}
+
+header .navbar-brand{
+    font-size: xx-large;
+}
+
+header .list{
+    font-size: large;
+}
+
 #main {
-    background-color: #c6c8ca;
-}
-#back
-{
-    background-color: #95c996;
-
+    background-color: white;
 }
 
-h1 {
-    font-size: 50px;
-}
-
-.image{
-    width: 700px;
-    height: 400px;
-    align-items: center;
-    margin-left: 450px;
-}
-
-.d{
+.disc{
     text-align: justify;
-    font-size: 30px;
+    font-size: 40px;
     align-content: center;
-    background-color: linen;
-    color: cornflowerblue;
+    color: green;
     margin-left: 250px;
     margin-right: 250px;
 }
-.title {
-    color: red;
-    font: bold;:
-    font-size: 30px;
+
+.topic{
+    font-size: 60px;
+    color: greenyellow;
+    text-align: center;
 }
