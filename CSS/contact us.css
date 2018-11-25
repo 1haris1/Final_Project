@@ -24,3 +24,8 @@ header .list{
     background: url("../media/pic1000.jpg") no-repeat right;
     background-size: cover;
 }
+
+.topic{
+    font-size: 30px;
+    background-color:darkgray;
+}
