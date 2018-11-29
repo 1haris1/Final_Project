@@ -1,13 +1,13 @@
+/*Register Page Css*/
+*{
+    box-sizing: border-box;
+    font-family: 'Footlight MT Light',sans-serif;
+    max-width: 100%;
+    cursor: pointer;
 
-
-
-/*
-Register Page Css*/
-
+}
 
 body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
-
 
 input[type=text], input[type=password] {
     width: 100%;
@@ -118,12 +118,10 @@ hr {
 /*
 login page css*/
 
-
-*{
-    font-family: 'Footlight MT Light',sans-serif;
-    max-width: 100%;
-    cursor: pointer;
+.navbar-toggler{
+    width: 6%;
 }
+
 header{
     background-color: green;
 }
@@ -159,14 +157,14 @@ header .list{
     box-shadow: inset -4px -6px 20px 0 #b8da32;
     max-width: 20%;
 }
-#Main-content #forget{
+#Main-content #for{
     color: white;
     word-spacing: 3px;
     letter-spacing: 2px;
     line-height: 0;
     font-weight: bold;
 }
-#Main-content #forget:hover{
+#Main-content #for:hover{
     text-decoration: underline;
 }
 @media (max-width: 576px){
@@ -175,7 +173,6 @@ header .list{
         background: url("../media/pic525.jpeg") no-repeat right;
         background-size: cover;
     }
-
 }
 
 
@@ -205,12 +202,14 @@ About Page CSS
 
 .disc{
     text-align: justify;
-    font-size: 40px;
+    font-size: 22px;
     align-content: center;
     color: green;
-    margin-left: 250px;
-    margin-right: 250px;
 }
+.disc h1{
+    color: mediumspringgreen;
+}
+
 
 .topic{
     font-size: 60px;
@@ -223,6 +222,8 @@ About Page CSS
 Home Page Css*/
 
 .gape{
-
     margin: 4%;
 }
+/*.hom{*/
+    /*height: 330px;*/
+/*}*/
