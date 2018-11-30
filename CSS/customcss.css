@@ -227,3 +227,23 @@ Home Page Css*/
 /*.hom{*/
     /*height: 330px;*/
 /*}*/
+
+/* Forget page */
+.fort{
+    height: 495px;
+}
+.fpass{
+    width: 30%;
+}
+#forget{
+    background:url("../media/pic1000.jpg");
+    background-size: cover;
+}
+#forget p
+{
+    margin-bottom: 41px;
+    color: #f8f9fa;
+    font-size: x-large;
+    letter-spacing: 0.5px;
+    margin-top: 47px;
+}
