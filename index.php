@@ -1,3 +1,6 @@
+<?php
+ require "server/Functions.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,27 +53,10 @@
 
 
 <div class="container-fluid">
-    <div class="row hom">
-
-        <img class="border border-success  col-sm-12 col-md-3  col-lg-3 rounded gape"  src="media/1.jpg">
-        <img class="border border-success  col-sm-12 col-md-3 col-lg-3  rounded gape"  src="media/2.jpg">
-        <img class="border border-success  col-sm-12 col-md-3 col-lg-3 rounded gape"  src="media/3.jpg">
-
+    <div class="row">
+        <?php read_data(); ?>
     </div>
 </div>
-<div class="container-fluid">
-    <div class="row hom">
-
-        <img class="border border-success  col-sm-12 col-md-3 col-lg-3 rounded gape"  src="media/4.jpg">
-        <img class="border border-success  col-sm-12 col-md-3 col-lg-3  rounded gape"  src="media/5.jpg">
-        <img class="border border-success  col-sm-12 col-md-3 col-lg-3 rounded gape"  src="media/6.jpg">
-
-    </div>
-</div>
-
-
-
-
 </body>
 
 <br>
