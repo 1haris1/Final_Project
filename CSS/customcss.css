@@ -256,3 +256,11 @@ Home Page Css*/
     box-shadow: inset -4px -6px 20px 0 #b8da32;
     max-width: 20%;
 }
+
+#regex:invalid {
+    background-color: #343a40;
+}
+
+#regex {
+    background-color: #28a745;
+}

@@ -44,7 +44,7 @@ else if(isset($_POST["Create_cat"])) {
 <!--                    <div class="input-group-prepend">-->
 <!--                        <div class="input-group-text"><i class="fas fa-file-signature"></i></div>-->
 <!--                    </div>-->
-                    <input type="text" class="form-control" id="dre_title" name="dre_Btitle" placeholder="Enter Brand Title" >
+                    <input id="regex" pattern="[^0-9][a-zA-Z0-9\s][^0-9]+" type="text" class="form-control" id="dre_title" name="dre_Btitle" placeholder="Enter Brand Title" >
                 </div>
             </div>
             <div class="row">
@@ -65,7 +65,7 @@ else if(isset($_POST["Create_cat"])) {
                     <!--                    <div class="input-group-prepend">-->
                     <!--                        <div class="input-group-text"><i class="fas fa-file-signature"></i></div>-->
                     <!--                    </div>-->
-                    <input type="text" class="form-control" id="dre_title" name="dre_Ctitle" placeholder="Enter Category Title" >
+                    <input id="regex" pattern="[^0-9][a-zA-Z0-9\s][^0-9]+" type="text" class="form-control" id="dre_title" name="dre_Ctitle" placeholder="Enter Category Title" >
                 </div>
             </div>
             <div class="row">
