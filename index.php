@@ -13,38 +13,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bangers|Old+Standard+TT">
 </head>
 <body>
-
-<header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
-        <a class="navbar-brand"> <span style="color:green;"> Perfect</span> Dressing</a>
-        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false" >
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="list navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="About_page.html">About us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Login.html">Log in</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="register.html">Register</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact_us.html">Contact us</a>
-                </li>
-            </ul>
-            <form class="form-check-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search Dress" aria-label="Search">
-                <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>
-</header>
+<?php
+include "templates/header.php";
+?>
 
 <div class="jumbotron">
     <h1>Buy Latest Stuff Onlline</h1>
@@ -61,11 +32,9 @@
 
 <br>
 <!-- Footer -->
-<footer class="page-footer font-small bg-success">
-    <div class="footer-copyright text-center py-3" >© 2018 Copyright:
-        <a style="color:#abdde5 ;" href="index.html"> eClothing Store</a>
-    </div>
-</footer>
+<?php
+include "templates/footer.php";
+?>
 <!-- Footer -->
 
 </html>
