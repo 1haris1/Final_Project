@@ -18,17 +18,18 @@ include "templates/header.php";
         <h1>Sign Up</h1>
         <p>Please fill in this form to create an account.</p>
 
-        <label><b>First name</b></label>
-        <input class="bg-dark" type="text" placeholder="Enter First name" name="firstname" required>
+        <label><b>Name name</b></label>
+        <input   type="text" placeholder="Enter First name" name="firstname" id="regex"
+                pattern="[^0-9][a-zA-Z0-9\s][^0-9]+" required>
 
         <label><b>Email</b></label>
-        <input class="bg-dark" type="text" placeholder="Enter Email" name="email" required>
+        <input id="regex" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" type="text" placeholder="Enter Email" name="email" required>
 
         <label><b>Password</b></label>
-        <input type="password"  class="bg-dark" placeholder="Enter Password" name="psw" required>
+        <input type="password"  id="regex" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Enter Password" name="psw" required>
 
         <label><b>Repeat Password</b></label>
-        <input type="password" class="bg-dark" placeholder="Repeat Password" name="psw-repeat" required>
+        <input type="password" id="regex" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Repeat Password" name="psw-repeat" required>
 
         <label>
             <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me

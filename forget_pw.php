@@ -23,7 +23,8 @@ include "templates/header.php";
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-key"></i></div>
                     </div>
-                    <input type="email"  class="form-control"  placeholder="new password">
+                    <input   class="form-control"  placeholder="new password"
+                           id="regex" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
                 </div>
             </div>
             <div class="fpass form-group offset-lg-4 offset-md-4 offset-sm-4 offset-3">
@@ -31,7 +32,8 @@ include "templates/header.php";
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-key"></i></div>
                     </div>
-                    <input type="email"  class="form-control"  placeholder=" confirm password">
+                    <input  class="form-control"  placeholder=" confirm password"
+                           id="regex" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
                 </div>
             </div>
             <button type="submit" class="btn btn-success">Submit</button>

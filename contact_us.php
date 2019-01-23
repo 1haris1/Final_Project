@@ -18,19 +18,19 @@ include "templates/header.php";
         <form>
             <div class="form-group">
                 <label for="exampleFormControlInput1" style="color: white">Name</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="haris">
+                <input  id="regex" pattern="[^0-9][a-zA-Z0-9\s][^0-9]+" class="form-control" id="exampleFormControlInput1" placeholder="haris">
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1" style="color: white">Email address</label>
-                <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="name@example.com">
+                <input  id="regex" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" class="form-control" id="exampleFormControlInput2" placeholder="name@example.com">
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1" style="color: white">Subject</label>
-                <input type="email" class="form-control" id="exampleFormControlInput3" placeholder="">
+                <input  id="regex" pattern="*" class="form-control" id="exampleFormControlInput3" placeholder="">
             </div>
             <div class="form-group">
                 <label for="exampleFormControlTextarea1" style="color: white">Message</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea id="regex" pattern="*" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
         </form>
     </div>
