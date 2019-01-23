@@ -1,3 +1,12 @@
+<?php
+   require "server/Functions.php";
+   if(isset($_POST['submit']))
+   {
+       $email = $_POST['email'];
+       $pass = $_POST['pass'];
+       login($email,$pass);
+   }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,14 +26,14 @@ include "templates/header.php";
 <section id="mid">
     <div id="Main-content" class=" container text-center">
         <h1>LOGIN</h1>
-        <form>
+        <form action="login.php" method="post">
             <div class="user row ">
                 <div class="form-group offset-lg-5 offset-md-4 offset-sm-4 offset-3">
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="fas fa-user"></i></div>
                         </div>
-                        <input type="email"  class="form-control"  placeholder="Username">
+                        <input type="email" name="email"  class="form-control"  placeholder="Username">
                     </div>
                 </div>
             </div>
@@ -34,11 +43,11 @@ include "templates/header.php";
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="fas fa-key"></i></div>
                         </div>
-                        <input style="margin: 0" type="password" class="form-control"  placeholder="Password">
+                        <input style="margin: 0" type="password" name="pass" class="form-control"  placeholder="Password">
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="submit" name="submit"class="btn btn-success">Submit</button>
         </form><br>
         <div id="for">
             <a href="forget_pw.php">Forget Password?</a>

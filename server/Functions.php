@@ -14,7 +14,7 @@ function read_data(){
         $price = $row['dress_price'];
         $img = $row['dress_image'];
 
-        echo "<div class='col-sm-6 col-md-4 col-lg-3 text-center product-summary'>
+        echo "<div class='col-sm-6 col-md-4 col-lg-3 text-center'>
                     <h5 class='text-capitalize'>$title</h5>
                     <img src='media/$img'>
                     <p> <b> Rs $price/-  </b> </p>
@@ -25,6 +25,28 @@ function read_data(){
                     </button>
                     </a>
                 </div>";
+    }
+}
+function login($E,$P){
+    global $con;
+    $email = $E;
+    $pass = $P;
+    $check = mysqli_query($con,"select * from login");
+    $result = mysqli_fetch_assoc($check);
+    $counter = mysqli_num_rows($check);
+    for($i=0;$i<$counter;$i++){
+        if($email == $result['user_Id'] || $pass == $result['password']) {
+            echo "Invalid Email or Password.";
+            break;
+        }
+        else{
+            $que="insert into login (user_id,password) VALUE ('$email','$pass')";
+            $conn = mysqli_query($con,$que);
+            if($conn){
+                header("location: ".$_SERVER['PHP_SELF']);
+            }
+            break;
+        }
     }
 }
 ?>
