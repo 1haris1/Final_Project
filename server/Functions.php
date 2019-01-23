@@ -16,7 +16,7 @@ function read_data(){
 
         echo "<div class='col-sm-6 col-md-4 col-lg-3 text-center'>
                     <h5 class='text-capitalize'>$title</h5>
-                    <img src='media/$img'>
+                    <img src='admin/Images/$img'>
                     <p> <b> Rs $price/-  </b> </p>
                     <a href='#' class='btn btn-info btn-sm'>Details</a>
                     <a href='#'>

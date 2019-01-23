@@ -260,3 +260,9 @@ Home Page Css*/
 #create {
     height: 490px;
 }
+#regex:invalid {
+    background-color: #343a40;
+}
+#regex {
+    background-color: #28a745;
+}
