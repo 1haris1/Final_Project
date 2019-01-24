@@ -7,19 +7,19 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="list navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="../index.php">Home </a>
+                    <a class="nav-link" href="index.php">Home </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../about_us.php">About us</a>
+                    <a class="nav-link" href="about_us.php">About us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../login.php">Log in</a>
+                    <a class="nav-link" href="login.php">Log in</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../register.php">Register</a>
+                    <a class="nav-link" href="register.php">Register</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../contact_us.php">Contact us</a>
+                    <a class="nav-link" href="contact_us.php">Contact us</a>
                 </li>
             </ul>
             <form class="form-check-inline my-2 my-lg-0">
