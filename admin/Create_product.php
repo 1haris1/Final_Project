@@ -1,18 +1,20 @@
 <?php
-    require "../server/db_connection.php";
+    require_once "../server/db_connection.php";
 if(isset($_POST["Create_product"])) {
     $title = $_POST["dre_title"];
     $brand = $_POST["dre_brand"];
     $cat = $_POST["dre_cat"];
     $price = $_POST["dre_price"];
     $key = $_POST["dre_key"];
-    $img = 0;
-//    $img = $_FILES['dre_img']['name'];
-//    $img_temp = $_FILES['dre_img']['temp_name'];
-//    move_uploaded_file($img_temp,"Images/$img");
+
+    $img = $_FILES['dre_img']['name'];
+    $img_temp = $_FILES['dre_img']['tmp_name'];
+
+    move_uploaded_file($img_temp,"Images/$img");
 
     $create = "insert into dress_product (dress_cat, dress_brand, dress_price,dress_image,dress_keyword,dress_title)
                                    value ('$cat','$brand','$price','$img','$key','$title')";
+
     $ref = mysqli_query($con,$create);
     if($ref){
         header("location: ".$_SERVER['PHP_SELF']);
@@ -39,14 +41,14 @@ include "../templates/header.php";
 
 <div class="container">
     <h1 class="text-center my-5"><i class="fas fa-plus fa-md"></i> <span class="d-none d-sm-inline"> Create New </span> Dress </h1>
-    <form action="Create_product.php" method="post">
+    <form action="Create_product.php" method="post" enctype="multipart/form-data">
         <div class="row">
             <div style="margin-top: 3px" class="col-lg-2 col-md-4 col-sm-6 ">
                 <label for="pro_title" class="d-none d-md-inline d-lg-inline d-sm-inline"> <span class="d-sm-none d-md-inline"> Dress </span> Title:</label>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="input-group">
-                    <input type="text" class="form-control"  name="dre_title" placeholder="Enter Dress Title" >
+                    <input type="text" class="form-control" id="dre_title" name="dre_title" placeholder="Enter Dress Title" >
                 </div>
             </div>
             <div style="margin-top: 3px" class="col-lg-2 col-md-4 col-sm-6 ">

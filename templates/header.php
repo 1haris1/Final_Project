@@ -27,5 +27,6 @@
                 <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
+        <div class="ml-3"> <i class="cart fas fa-cart-plus"></i></div>
     </nav>
 </header>

@@ -9,18 +9,18 @@ function read_data(){
     if($count_data == 0){
         echo "<h4>There is no data to read.</h4>";
     }
-    else if($row = mysqli_fetch_assoc($result)){
+    while($row = mysqli_fetch_assoc($result)){
         $title = $row['dress_title'];
         $price = $row['dress_price'];
         $img = $row['dress_image'];
 
         echo "<div class='col-sm-6 col-md-4 col-lg-3 text-center'>
                     <h5 class='text-capitalize'>$title</h5>
-                    <img src='admin/Images/$img'>
+                    <img width='200px' height='220px' src='admin/Images/$img'>
                     <p> <b> Rs $price/-  </b> </p>
                     <a href='#' class='btn btn-info btn-sm'>Details</a>
                     <a href='#'>
-                    <button class='btn btn-primary btn-sm'>
+                    <button class='btn btn-success btn-sm'>
                        <i class='fas fa-cart-plus'></i> Add to Cart
                     </button>
                     </a>
