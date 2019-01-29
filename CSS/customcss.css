@@ -178,7 +178,10 @@ header .list{
         width: 20%;
     }
 }
-
+.cart{
+    color: #189834;
+    font-size: xx-large;
+}
 
 
 /*
@@ -256,11 +259,13 @@ Home Page Css*/
     box-shadow: inset -4px -6px 20px 0 #b8da32;
     max-width: 20%;
 }
-
+ /* Create */
+#create {
+    height: 490px;
+}
 #regex:invalid {
     background-color: #343a40;
 }
-
 #regex {
     background-color: #28a745;
 }

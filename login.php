@@ -12,6 +12,8 @@
 <body>
 <?php
 include "templates/header.php";
+//pushing again bcz of some issue in previous version
+
 ?>
 
 <section id="mid">
@@ -24,7 +26,7 @@ include "templates/header.php";
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="fas fa-user"></i></div>
                         </div>
-                        <input class="form-control"  placeholder="Username" id="regex" pattern="^[a-z0-9_-]{3,15}$">
+                        <input type="email"  class="form-control"  placeholder="Username">
                     </div>
                 </div>
             </div>
@@ -34,8 +36,7 @@ include "templates/header.php";
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="fas fa-key"></i></div>
                         </div>
-                        <input style="margin: 0" class="form-control"  placeholder="Password" id="regex"
-                               pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+                        <input style="margin: 0" type="password" class="form-control"  placeholder="Password">
                     </div>
                 </div>
             </div>
