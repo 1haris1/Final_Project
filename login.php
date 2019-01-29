@@ -12,6 +12,8 @@
 <body>
 <?php
 include "templates/header.php";
+//pushing again bcz of some issue in previous version
+
 ?>
 
 <section id="mid">
