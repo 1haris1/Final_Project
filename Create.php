@@ -3,7 +3,7 @@ include "server/db_connection.php";
 
 if(isset($_POST["Create_brand"])) {
     $C_brand = $_POST["dre_Btitle"];
-    $create = "insert into dress_brands (brands_title) value ('$C_brand')";
+    $create = "insert into dress_brands (brands_title) value ('$C_brand');";
     $ref = mysqli_query($con,$create);
     if($ref){
         header("location: ".$_SERVER['PHP_SELF']);
