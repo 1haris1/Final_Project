@@ -17,7 +17,7 @@ if(isset($_POST["Create_product"])) {
 
     $ref = mysqli_query($con,$create);
     if($ref){
-        header("location: ".$_SERVER['PHP_SELF']);
+        header("location: admin_page.php?insert_product");
     }
 }
 
@@ -34,10 +34,6 @@ if(isset($_POST["Create_product"])) {
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bangers|Old+Standard+TT">
 </head>
 <body>
-<?php
-include "admin_header.php";
-?>
-
 <div class="container">
     <h1 class="text-center my-5"><i class="fas fa-plus fa-md"></i> <span class="d-none d-sm-inline"> Create New </span> Dress </h1>
     <form action="Create_product.php" method="post" enctype="multipart/form-data">
@@ -125,9 +121,6 @@ include "admin_header.php";
         </div>
     </form>
 </div>
-<?php
-include "../templates/footer.php";
-?>
 </body>
 </html>
 

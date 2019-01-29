@@ -6,7 +6,7 @@ if(isset($_POST["Create_cat"])) {
     $create = "insert into dress_categories (cat_title) value ('$C_category')";
     $ref = mysqli_query($con,$create);
     if($ref){
-        header("location: ".$_SERVER['PHP_SELF']);
+        header("location: admin_page.php?insert_category");
     }
 }
 
@@ -23,12 +23,9 @@ if(isset($_POST["Create_cat"])) {
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bangers|Old+Standard+TT">
 </head>
 <body>
-<?php
-include "admin_header.php";
-?>
 <div class="container">
     <h1 class="text-center my-5"><i class="fas fa-plus fa-md"></i> <span class="d-none d-sm-inline"> Create New </span>Category </h1>
-    <form action="Create.php" method="post">
+    <form action="Create_category.php" method="post">
         <div class="row">
             <div style="margin-top: 3px" class="col-lg-2 col-md-4 col-sm-6">
                 <label for="pro_title" class="d-none d-md-inline d-lg-inline d-sm-inline"> <span class="d-sm-none d-md-inline"> Product </span> Category:</label>
@@ -48,8 +45,6 @@ include "admin_header.php";
     <br>
     <br>
 </div>
-<?php
-include "../templates/footer.php";
-?>
+
 </body>
 </html>

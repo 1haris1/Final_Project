@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 21, 2019 at 08:39 PM
+-- Generation Time: Jan 29, 2019 at 04:13 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 5.6.34
 
@@ -66,7 +66,8 @@ INSERT INTO `dress_categories` (`cat_Id`, `cat_title`) VALUES
 (3, 'Sweater'),
 (4, 'Jacket'),
 (5, 'Jeans'),
-(6, 'Pent Coat');
+(6, 'Pent Coat'),
+(7, 'Shirt');
 
 -- --------------------------------------------------------
 
@@ -75,14 +76,23 @@ INSERT INTO `dress_categories` (`cat_Id`, `cat_title`) VALUES
 --
 
 CREATE TABLE `dress_product` (
-  `dress_Id` int(50) NOT NULL,
-  `dress_cat` varchar(50) NOT NULL,
-  `dress_brand` varchar(25) NOT NULL,
+  `dress_Id` int(255) NOT NULL,
+  `dress_cat` int(50) NOT NULL,
+  `dress_brand` int(25) NOT NULL,
   `dress_price` int(50) NOT NULL,
   `dress_image` varchar(200) NOT NULL,
   `dress_keyword` varchar(300) NOT NULL,
-  `dress_title` varchar(50) NOT NULL
+  `dress_title` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dress_product`
+--
+
+INSERT INTO `dress_product` (`dress_Id`, `dress_cat`, `dress_brand`, `dress_price`, `dress_image`, `dress_keyword`, `dress_title`) VALUES
+(28, 7, 1, 1500, 'levis.jpg', 'shirt levis', 'Levi Shirt'),
+(29, 5, 4, 1800, 'jeans.jpg', 'pent jeans', 'Men Jeans'),
+(31, 7, 6, 2500, 'luxury.jpg', 'pent jeans luxury', 'luxury jean');
 
 -- --------------------------------------------------------
 
@@ -91,8 +101,9 @@ CREATE TABLE `dress_product` (
 --
 
 CREATE TABLE `login` (
-  `user_Id` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `L_id` int(255) NOT NULL,
+  `L_email` varchar(300) NOT NULL,
+  `L_password` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -118,6 +129,12 @@ ALTER TABLE `dress_product`
   ADD PRIMARY KEY (`dress_Id`);
 
 --
+-- Indexes for table `login`
+--
+ALTER TABLE `login`
+  ADD PRIMARY KEY (`L_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -131,13 +148,19 @@ ALTER TABLE `dress_brands`
 -- AUTO_INCREMENT for table `dress_categories`
 --
 ALTER TABLE `dress_categories`
-  MODIFY `cat_Id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `cat_Id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `dress_product`
 --
 ALTER TABLE `dress_product`
-  MODIFY `dress_Id` int(50) NOT NULL AUTO_INCREMENT;
+  MODIFY `dress_Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
+--
+-- AUTO_INCREMENT for table `login`
+--
+ALTER TABLE `login`
+  MODIFY `L_id` int(255) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
