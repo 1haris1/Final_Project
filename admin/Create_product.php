@@ -30,13 +30,12 @@ if(isset($_POST["Create_product"])) {
     <title>Insert Dress</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/bootstrap.css">
-    <link rel="stylesheet" href="../CSS/customcss.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bangers|Old+Standard+TT">
 </head>
 <body>
 <?php
-include "../templates/header.php";
+include "admin_header.php";
 ?>
 
 <div class="container">
@@ -121,7 +120,7 @@ include "../templates/header.php";
 
         <div id="submit" class="col-lg-3 col-md-4 col-sm-6">
             <div class="">
-                <button type="submit" name="Create_product" class="btn btn-primary btn-block"><i class="fas fa-plus"></i> Insert Product </button>
+                <button type="submit" name="Create_product" class="btn btn-primary btn-block"><i class="fas fa-plus"></i> Insert Product </button> <br>
             </div>
         </div>
     </form>
