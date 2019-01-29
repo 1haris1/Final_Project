@@ -90,6 +90,25 @@ require "../server/Functions.php";
                 else if(isset($_GET['insert_brand'])){
                     include ('Create_brand.php');
                 }
+                else if(isset($_GET['view_categories'])){
+                 $cat = "select * from dress_categories";
+                 $result = mysqli_query($con,$cat);
+                 echo "<h1> Categories</h1>";
+                 while ($row = mysqli_fetch_assoc($result)) {
+                                $cat_title = $row['cat_title'];
+                                $cat_id = $row['cat_Id'];
+                                echo "<h4>$cat_title</h4>";
+                 }
+                }
+                else if(isset($_GET['view_brands'])){
+                            $brand = "select * from dress_brands";
+                            $result = mysqli_query($con,$brand);
+                          while ($row = mysqli_fetch_assoc($result)) {
+                              $B_title = $row['brands_title'];
+                              $B_id = $row['brands_Id'];
+                              echo "<h4>$B_title</h4>";
+                          }
+                }
                 ?>
         </div>
     </div>
