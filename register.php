@@ -11,6 +11,31 @@
 <body>
 <?php
 include "templates/header.php";
+include "server/Functions.php";
+
+if(isset($_POST['submit'])){
+
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $pwd1 = $_POST['pwd'];
+    $pwd2 = $_POST['psw-repeat'];
+
+    if (!preg_match("/[^0-9][a-zA-Z0-9\s][^0-9]+/",$name)) {
+        echo "wrong name";
+    }
+    if (!preg_match("/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/",$email)) {
+        echo "wrong name";
+    }
+    if (!preg_match("/(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/",$pwd1)) {
+        echo "wrong name";
+    }
+    if (!preg_match("/(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/",$pwd2)) {
+        echo "wrong name";
+    }
+
+}
+
+
 ?>
 
 <div class="regis">
@@ -20,8 +45,7 @@ include "templates/header.php";
 
         <label><b>Name name</b></label>
         <input   id="regex"
-                 pattern="[^0-9][a-zA-Z0-9\s][^0-9]+" type="text" placeholder="Enter First name" name="firstname"  required>
-
+                 pattern="[^0-9][a-zA-Z0-9\s][^0-9]+" type="text" placeholder="Enter name" name="name"  required>
         <label><b>Email</b></label>
         <input id="regex" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" type="text" placeholder="Enter Email" name="email" required>
 
@@ -39,7 +63,7 @@ include "templates/header.php";
 
         <div class="clearfix">
             <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-            <button type="submit" class="signupbtn">Sign Up</button>
+            <button type="submit" name="submit" class="signupbtn">Sign Up</button>
         </div>
     </div>
 </div>

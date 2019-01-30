@@ -1,14 +1,31 @@
 <?php
 include "../server/db_connection.php";
 
+
+
+
 if(isset($_POST["Create_cat"])) {
+
+
+
+        $cattest = $_POST['dre_Ctitle'];
+
+        if (!preg_match("/[^0-9][a-zA-Z0-9\s][^0-9]+/",$cattest)) {
+            echo "wrong name";
+        } else{
+
+
     $C_category = $_POST["dre_Ctitle"];
     $create = "insert into dress_categories (cat_title) value ('$C_category')";
     $ref = mysqli_query($con,$create);
     if($ref){
         header("location: admin_page.php?insert_category");
     }
+
+        }
 }
+
+
 
 ?>
 

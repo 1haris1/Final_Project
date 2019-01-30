@@ -1,24 +1,40 @@
 <?php
     require_once "../server/db_connection.php";
 if(isset($_POST["Create_product"])) {
-    $title = $_POST["dre_title"];
-    $brand = $_POST["dre_brand"];
-    $cat = $_POST["dre_cat"];
-    $price = $_POST["dre_price"];
-    $key = $_POST["dre_key"];
+
+
+
+$title = $_POST["dre_title"];
+$brand = $_POST["dre_brand"];
+$cat = $_POST["dre_cat"];
+$price = $_POST["dre_price"];
+$key = $_POST["dre_key"];
+
+
+    if (!preg_match("/[a-z|A-Z|0-9\s]+/",$title)) {
+        echo "wrong name";
+    }
+    if (!preg_match("/[0-9]+.?[0-9]+/",$price)) {
+        echo "wrong name";
+    }
+    if (!preg_match("/[a-z|A-Z|0-9\s]+/",$key)) {
+        echo "wrong name";
+    } else {
 
     $img = $_FILES['dre_img']['name'];
     $img_temp = $_FILES['dre_img']['tmp_name'];
 
-    move_uploaded_file($img_temp,"Images/$img");
+    move_uploaded_file($img_temp, "Images/$img");
 
     $create = "insert into dress_product (dress_cat, dress_brand, dress_price,dress_image,dress_keyword,dress_title)
                                    value ('$cat','$brand','$price','$img','$key','$title')";
 
-    $ref = mysqli_query($con,$create);
-    if($ref){
+    $ref = mysqli_query($con, $create);
+    if ($ref) {
         header("location: admin_page.php?insert_product");
     }
+
+}
 }
 
 ?>

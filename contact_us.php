@@ -11,6 +11,26 @@
 <body>
 <?php
 include "templates/header.php";
+
+
+if(isset($_POST['submit'])) {
+
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+
+
+    if (!preg_match("/[^0-9][a-zA-Z0-9\s][^0-9]+/", $name)) {
+        echo "wrong name";
+    }
+    if (!preg_match("/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/", $email)) {
+        echo "wrong name";
+    }
+    if (!preg_match("/*/", $subject)) {
+        echo "wrong name";
+    }
+
+}
 ?>
 
 <div id="pic"  class="container">
@@ -18,15 +38,15 @@ include "templates/header.php";
         <form>
             <div class="form-group">
                 <label for="exampleFormControlInput1" style="color: white">Name</label>
-                <input  id="regex" pattern="[^0-9][a-zA-Z0-9\s][^0-9]+" class="form-control" id="exampleFormControlInput1" placeholder="haris">
+                <input  id="regex" pattern="[^0-9][a-zA-Z0-9\s][^0-9]+" class="form-control" id="exampleFormControlInput1" name="name" placeholder="haris">
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1" style="color: white">Email address</label>
-                <input  id="regex" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" class="form-control" id="exampleFormControlInput2" placeholder="name@example.com">
+                <input  id="regex" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" class="form-control" name="email" id="exampleFormControlInput2" placeholder="name@example.com">
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1" style="color: white">Subject</label>
-                <input  id="regex" pattern="*" class="form-control" id="exampleFormControlInput3" placeholder="">
+                <input  id="regex" pattern="*" name="subject" class="form-control" id="exampleFormControlInput3" placeholder="">
             </div>
             <div class="form-group">
                 <label for="exampleFormControlTextarea1" style="color: white">Message</label>

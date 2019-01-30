@@ -15,8 +15,16 @@
 <body>
 <?php
 include "templates/header.php";
-//pushing again bcz of some issue in previous version
 
+
+if(isset($_POST['submit'])) {
+
+    $email = $_POST['email'];
+
+    if (!preg_match("/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/", $cattest)) {
+        echo "wrong name";
+    }
+}
 ?>
 
 <section id="mid">
@@ -29,7 +37,7 @@ include "templates/header.php";
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="fas fa-user"></i></div>
                         </div>
-                        <input id="regex" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" type="email"  class="form-control"  placeholder="email">
+                        <input id="regex" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" type="email"  class="form-control" name="email" placeholder="email">
 
                     </div>
                 </div>
@@ -44,7 +52,7 @@ include "templates/header.php";
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="submit" class="btn btn-success" name="submit">Submit</button>
         </form><br>
         <div id="for">
             <a href="forget_pw.php">Forget Password?</a>

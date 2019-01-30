@@ -2,12 +2,22 @@
 include "../server/db_connection.php";
 
 if(isset($_POST["Create_brand"])) {
+
+$brandtest = $_POST['dre_Btitle'];
+
+if (!preg_match("/[^0-9][a-zA-Z0-9\s][^0-9]+/",$brandtest)) {
+    echo "wrong name";
+} else {
+
     $C_brand = $_POST["dre_Btitle"];
     $create = "insert into dress_brands (brands_title) value ('$C_brand');";
-    $ref = mysqli_query($con,$create);
-    if($ref){
+    $ref = mysqli_query($con, $create);
+    if ($ref) {
         header("location: admin_page.php?insert_brand");
     }
+
+}
+
 }
 ?>
 
