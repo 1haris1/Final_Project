@@ -39,9 +39,11 @@
                                 <i class='fa fa-trash-alt'></i> 
                                 <span class='d-none d-md-inline d-lg-inline'> Delete </span>
                             </a>
+                            <a id='' href='Edit_product.php?edit_pro=$id' class='btn btn-success'> 
+                                <span class=' d-md-inline d-lg-inline'> Edit </span>
+                            </a>
                         </td>
                     </tr>";
-
                 }
             }
             ?>
