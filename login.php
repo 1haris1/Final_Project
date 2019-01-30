@@ -29,7 +29,8 @@ include "templates/header.php";
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="fas fa-user"></i></div>
                         </div>
-                        <input type="email"  class="form-control"  placeholder="Username">
+                        <input id="regex" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" type="email"  class="form-control"  placeholder="email">
+
                     </div>
                 </div>
             </div>
@@ -39,7 +40,7 @@ include "templates/header.php";
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="fas fa-key"></i></div>
                         </div>
-                        <input style="margin: 0" type="password" class="form-control"  placeholder="Password">
+                        <input id="regex" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" style="margin: 0" type="password" class="form-control"  placeholder="Password">
                     </div>
                 </div>
             </div>

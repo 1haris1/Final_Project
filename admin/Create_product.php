@@ -30,6 +30,7 @@ if(isset($_POST["Create_product"])) {
     <title>Insert Dress</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/bootstrap.css">
+    <link rel="stylesheet" href="../CSS/customcss.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bangers|Old+Standard+TT">
 </head>
@@ -43,7 +44,7 @@ if(isset($_POST["Create_product"])) {
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="input-group">
-                    <input type="text" class="form-control" id="dre_title" name="dre_title" placeholder="Enter Dress Title" >
+                    <input id="regex"  pattern="[a-z|A-Z|0-9\s]+" type="text" class="form-control" id="dre_title" name="dre_title" placeholder="Enter Dress Title" >
                 </div>
             </div>
             <div style="margin-top: 3px" class="col-lg-2 col-md-4 col-sm-6 ">
@@ -91,7 +92,7 @@ if(isset($_POST["Create_product"])) {
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="input-group">
-                    <input type="text" class="form-control"  name="dre_price" placeholder="Enter Dress Price" >
+                    <input id="regex"  pattern="[0-9]+.?[0-9]+" type="text" class="form-control"  name="dre_price" placeholder="Enter Dress Price" >
                 </div>
             </div>
         </div>
@@ -109,7 +110,7 @@ if(isset($_POST["Create_product"])) {
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="input-group">
-                    <input type="text" class="form-control"  name="dre_key" placeholder="Enter Dress Keywords" >
+                    <input id="regex"  pattern="[a-z|A-Z|0-9\s]+" type="text" class="form-control"  name="dre_key" placeholder="Enter Dress Keywords" >
                 </div>
             </div>
         </div>

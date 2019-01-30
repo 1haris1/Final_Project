@@ -15,13 +15,14 @@ if(isset($_GET['del_pro'])){
     <meta charset="UTF-8">
     <title>Delete Product</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/bootstrap.css">
+    <link rel="stylesheet" href="CSS/bootstrap.css">
+    <link rel="stylesheet" href="CSS/customcss.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bangers|Old+Standard+TT">
 </head>
 <body>
 <?php
-include "admin_header.php";
+include "admin/admin_header.php";
 ?>
 
 <div class="container">
@@ -33,7 +34,7 @@ include "admin_header.php";
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="input-group">
-                    <input id="regex"  type="text" class="form-control"  name="dre_Btitle" placeholder="Enter Product Id" >
+                    <input id="regex"  pattern="[0-9]+" type="text" class="form-control"  name="dre_Btitle" placeholder="Enter Product Id" >
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
@@ -47,7 +48,7 @@ include "admin_header.php";
     <br>
 </div>
 <?php
-include "../templates/footer.php";
+include "templates/footer.php";
 ?>
 </body>
 </html>

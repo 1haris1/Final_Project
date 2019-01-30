@@ -51,7 +51,7 @@ where dress_id='$pro_id'";
 
     $update_pro = mysqli_query($con, $update_product);
     if($update_pro){
-        header("location: admin_page.php");
+        header("location: admin/admin_page.php");
     }
 }
 ?>
@@ -65,13 +65,14 @@ where dress_id='$pro_id'";
     <meta charset="UTF-8">
     <title>Update Product</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/bootstrap.css">
+    <link rel="stylesheet" href="CSS/bootstrap.css">
+    <link rel="stylesheet" href="CSS/customcss.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bangers|Old+Standard+TT">
 </head>
 <body>
 <?php
-include "admin_header.php";
+include "admin/admin_header.php";
 ?>
 
 <div class="row">
@@ -83,7 +84,7 @@ include "admin_header.php";
             <div class="form-group row">
                 <label class="col-form-label col-sm-4 col-lg-3 d-none d-sm-block" for="pro_title">Product Title</label>
                 <div class="col-12 col-sm-8 col-lg-9">
-                    <input class="form-control" type="text" id="pro_title" name="pro_title" placeholder="Title"
+                    <input id="regex"  pattern="[a-z|0-9|A-Z]+" class="form-control" type="text" id="pro_title" name="pro_title" placeholder="Title"
                            value="<?php echo $pro_title;?>">
                 </div>
             </div>
@@ -125,20 +126,20 @@ include "admin_header.php";
                 <label class="col-form-label col-sm-4 col-lg-3 d-none d-sm-block" for="pro_image">Product Image</label>
                 <div class="col-12 col-sm-8 col-lg-9">
                     <img class="img-thumbnail" src='product_images/<?php echo $pro_image;?>' width='80' height='80'>
-                    <input class="form-control-file" type="file" id="pro_image" name="pro_image" required>
+                    <input  class="form-control-file" type="file" id="pro_image" name="pro_image" required>
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-form-label col-sm-4 col-lg-3 d-none d-sm-block" for="pro_price">Product Price</label>
+                <label id="regex"  pattern="[0-9]+.[0-9]+" class="col-form-label col-sm-4 col-lg-3 d-none d-sm-block" for="pro_price">Product Price</label>
                 <div class="col-12 col-sm-8 col-lg-9">
-                    <input class="form-control" type="text" id="pro_price" name="pro_price" placeholder="Product Price"
+                    <input id="regex"  pattern="[a-z|0-9|A-Z]+" class="form-control" type="text" id="pro_price" name="pro_price" placeholder="Product Price"
                            value="<?php echo $pro_price;?>">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-form-label col-sm-4 col-lg-3 d-none d-sm-block" for="pro_desc">Product Description</label>
                 <div class="col-12 col-sm-8 col-lg-9">
-                    <textarea class="form-control"  name="pro_desc" id="pro_desc" rows="4" placeholder="Product Description">
+                    <textarea id="regex"  pattern="*" class="form-control"  name="pro_desc" id="pro_desc" rows="4" placeholder="Product Description">
                         <?php echo $pro_desc;?>
                     </textarea>
                 </div>
@@ -146,7 +147,7 @@ include "admin_header.php";
             <div class="form-group row">
                 <label class="col-form-label col-sm-4 col-lg-3 d-none d-sm-block" for="pro_keywords">Product Keywords</label>
                 <div class="col-12 col-sm-8 col-lg-9">
-                    <input class="form-control" type="text" id="pro_keywords" name="pro_keywords" placeholder="Product Keywords"
+                    <input id="regex"  pattern="[a-z|0-9|A-Z]+" class="form-control" type="text" id="pro_keywords" name="pro_keywords" placeholder="Product Keywords"
                            value="<?php echo $pro_keywords;?>">
                 </div>
             </div>

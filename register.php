@@ -19,8 +19,8 @@ include "templates/header.php";
         <p>Please fill in this form to create an account.</p>
 
         <label><b>Name name</b></label>
-        <input   type="text" placeholder="Enter First name" name="firstname" id="regex"
-                pattern="[^0-9][a-zA-Z0-9\s][^0-9]+" required>
+        <input   id="regex"
+                 pattern="[^0-9][a-zA-Z0-9\s][^0-9]+" type="text" placeholder="Enter First name" name="firstname"  required>
 
         <label><b>Email</b></label>
         <input id="regex" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" type="text" placeholder="Enter Email" name="email" required>
