@@ -7,6 +7,25 @@
     <link rel="stylesheet" href="CSS/customcss.css" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <script>
+        function checkEmail(str) {
+            if (str.length == 0) {
+                document.getElementById("hint").innerHTML = "";
+                return;
+            } else {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("hint").innerHTML = this.responseText;
+                    }
+                };
+                xmlhttp.open("GET", "check_email.php?e=" + str, true);
+                xmlhttp.send();
+                //document.getElementById('hint').innerHTML = 'loading...';
+            }
+        }
+    </script>
+
 </head>
 <body>
 <?php
@@ -47,7 +66,10 @@ if(isset($_POST['submit'])){
         <input   id="regex"
                  pattern="[^0-9][a-zA-Z0-9\s][^0-9]+" type="text" placeholder="Enter name" name="name"  required>
         <label><b>Email</b></label>
-        <input id="regex" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" type="text" placeholder="Enter Email" name="email" required>
+        <input id="regex" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" type="text" placeholder="Enter Email"
+               name="email" required onkeyup="checkEmail(this.value)">
+        <span class="text-danger" id="hint"></span>
+
 
         <label><b>Password</b></label>
         <input type="password"  id="regex" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Enter Password" name="psw" required>
