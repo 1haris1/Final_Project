@@ -1,5 +1,12 @@
 <?php
- require "server/Functions.php";
+require "server/Functions.php";
+include "templates/header.php";
+
+$cookiename = "languagecookie";
+$cookievalue = "eng";
+
+setcookie($cookiename,$cookievalue,time() + (86400 * 30),"/");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,9 +21,7 @@
 
 </head>
 <body>
-<?php
-include "templates/header.php";
-?>
+
 
 <div class="jumbotron">
     <h1>Buy Latest Stuff Onlline</h1>
@@ -26,7 +31,19 @@ include "templates/header.php";
 
 <div class="container-fluid" >
     <div id="content" class="row">
-        <?php read_data(); ?>
+        <?php
+
+        if(!isset($_COOKIE[$cookiename])){
+
+        }else{
+            $verify="success";
+            //echo $verify;
+        }
+
+        read_data();
+
+
+        ?>
     </div>
 </div>
 </body>
