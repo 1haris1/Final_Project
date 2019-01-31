@@ -14,39 +14,17 @@ function read_data(){
         $price = $row['dress_price'];
         $img = $row['dress_image'];
 
-        echo "<div class='col-sm-6 col-md-4 col-lg-3 text-center'>
+        echo "<div class='data col-sm-6 col-md-4 col-lg-3 text-center mb-3'>
                     <h5 class='text-capitalize'>$title</h5>
                     <img width='200px' height='220px' src='admin/Images/$img'>
                     <p> <b> Rs $price/-  </b> </p>
-                    <a href='#' class='btn btn-info btn-sm'>Details</a>
+                    <a href='#' class='btn btn-info btn-sm mb-2'>Details</a>
                     <a href='#'>
-                    <button class='btn btn-success btn-sm'>
+                    <a href='#' onclick='add();' class='btn btn-success btn-sm mb-2'>
                        <i class='fas fa-cart-plus'></i> Add to Cart
-                    </button>
+                    </a>
                     </a>
                 </div>";
-    }
-}
-function login($E,$P){
-    global $con;
-    $email = $E;
-    $pass = $P;
-    $check = mysqli_query($con,"select * from login");
-    $result = mysqli_fetch_assoc($check);
-    $counter = mysqli_num_rows($check);
-    for($i=0;$i<$counter;$i++){
-        if($email == $result['user_Id'] || $pass == $result['password']) {
-            echo "Invalid Email or Password.";
-            break;
-        }
-        else{
-            $que="insert into login (user_id,password) VALUE ('$email','$pass')";
-            $conn = mysqli_query($con,$que);
-            if($conn){
-                header("location: ".$_SERVER['PHP_SELF']);
-            }
-            break;
-        }
     }
 }
 ?>

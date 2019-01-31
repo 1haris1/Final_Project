@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: AZ
- * Date: 31/01/2019
- * Time: 3:51 PM
- */
+
 
 session_start();
 session_destroy();

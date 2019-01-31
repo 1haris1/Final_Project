@@ -182,8 +182,28 @@ header .list{
     color: #189834;
     font-size: xx-large;
 }
-
-
+#rem{
+    font-size: 18px;
+    color: white;
+}
+#msg{
+    color: red;
+    font-family: monospace;
+}
+#msg2{
+    color: red;
+    font-family: monospace;
+}
+#add{
+    border-radius: 60%;
+    background-color: red;
+    font-size: initial;
+    color: #f5e8e8;
+}
+.data{
+    border: 1px solid gray;
+    box-shadow: -1px 1px 20px 11px #197d6b;
+}
 /*
 Contact Us Css*/
 

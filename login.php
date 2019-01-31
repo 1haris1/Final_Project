@@ -1,6 +1,5 @@
 <?php
 session_start();
-include "templates/header.php";
 include "server/db_connection.php";
 $error_msg = '';
 global $con;
@@ -14,24 +13,28 @@ if(isset($_POST['submit'])) {
     $sel_user = "select * from login where L_email='$email' AND L_password='$pass'";
     $run_user = mysqli_query($con, $sel_user);
     $check_user = mysqli_num_rows($run_user);
+    $get_name = "select * from register where Uemail='$email' AND Upass='$pass'";
+    $user = mysqli_query($con, $get_name);
+    $row = mysqli_fetch_assoc($user);
+    $user_name = $row['Uname'];
     if($check_user==0){
         $error_msg = 'Password or Email is wrong, try again';
-        echo $error_msg;
     }
     else{
-        $_SESSION['user_email'] = $email;
+        $_SESSION['L_email'] = $email;
+//        echo $_SESSION['L_email'];
         if(!empty($_POST['remember'])) {
-            setcookie('user_email', $email, time() + (10 * 365 * 24 * 60 * 60));
-            setcookie('user_pass', $pass, time() + (10 * 365 * 24 * 60 * 60));
+            setcookie('L_email', $email, time() + (10 * 365 * 24 * 60 * 60));
+            setcookie('L_password', $pass, time() + (10 * 365 * 24 * 60 * 60));
         } else {
-            setcookie('user_email','' );
-            setcookie('user_pass', '');
+            setcookie('L_email','' );
+            setcookie('L_password', '');
         }
-        header('location:index.php?logged_in=You have successfully logged in!');
-        echo "correct";
+        header('location:index.php?name='.$user_name);
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,10 +48,14 @@ if(isset($_POST['submit'])) {
 </head>
 <body>
 
-
+<?php
+include "templates/header.php";
+?>
 <section id="mid">
     <div id="Main-content" class=" container text-center">
         <h1>LOGIN</h1>
+        <h4 id="msg2"><?php echo @$_GET['logged_out']?></h4>
+        <h4 id="msg"><?php echo $error_msg ?></h4>
         <form method="post">
             <div class="user row ">
                 <div class="form-group offset-lg-5 offset-md-4 offset-sm-4 offset-3">
@@ -56,7 +63,8 @@ if(isset($_POST['submit'])) {
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="fas fa-user"></i></div>
                         </div>
-                        <input name="L_email" id="regex" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" type="email"  class="form-control" name="email" placeholder="email">
+                        <input name="L_email" id="regex" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" type="email"  class="form-control" name="email"
+                               value="<?php @$_COOKIE['L_email'] ?>" placeholder="email">
 
                     </div>
                 </div>
@@ -67,11 +75,14 @@ if(isset($_POST['submit'])) {
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="fas fa-key"></i></div>
                         </div>
-                        <input name="L_password" id="regex" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" style="margin: 0" type="password" class="form-control"  placeholder="Password">
+                        <input name="L_password" id="regex" value="<?php @$_COOKIE['L_password'] ?>" style="margin: 0" type="password" class="form-control"  placeholder="Password">
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-success" name="submit">Submit</button>
+            <div>
+                <label id="rem"> <input type="radio" value="re" name="remember" >Remember me</label>
+            </div>
+            <button type="submit" class="btn btn-success" name="submit">Sign in</button>
         </form><br>
         <div id="for">
             <a href="forget_pw.php">Forget Password?</a>

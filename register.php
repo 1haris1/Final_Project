@@ -2,23 +2,23 @@
 include "server/Functions.php";
 include "server/db_connection.php";
 
+include "templates/header.php";
 global $con;
-if(isset($_POST['submit'])) {
-//getting text data from the fields
-
-    $id = $_POST['id'];
-    $email = $_POST['email'];
-    $password = $_POST['psw'];
-
-    $register_user = "insert into login (L_id, L_email,L_password) 
-                  VALUES ('$id','$email','$password');";
-
-    $insert_user = mysqli_query($con, $register_user);
-    if ($insert_user) {
-        header("location: " . $_SERVER['PHP_SELF']);
-    }
-
-}
+//if(isset($_POST['submit'])) {
+////getting text data from the fields
+//
+//    $email = $_POST['email'];
+//    $password = $_POST['psw'];
+//
+//    $register_user = "insert into login (L_id, L_email,L_password)
+//                  VALUES ('$email','$password');";
+//
+//    $insert_user = mysqli_query($con, $register_user);
+//    if ($insert_user) {
+//        header("location: " . $_SERVER['PHP_SELF']);
+//    }
+//
+//}
 
 ?>
 
@@ -54,7 +54,6 @@ if(isset($_POST['submit'])) {
 </head>
 <body>
 <?php
-include "templates/header.php";
 
 
 if(isset($_POST['submit'])){
@@ -76,7 +75,17 @@ if(isset($_POST['submit'])){
     if (!preg_match("/(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/",$pwd2)) {
         echo "wrong name";
     }
-
+    if($pwd1 == $pwd2)
+    {
+        $register = "insert into register (Uname,Uemail,Upass) VALUE ('$name','$email','$pwd1')";
+        $send = mysqli_query($con,$register);
+        $login = "insert into login (L_email,L_password) VALUE ('$email','$pwd1')";
+        $send2 = mysqli_query($con,$login);
+        if($send)
+        {
+            header("location: register.php?reg");
+        }
+    }
 }
 
 
@@ -87,7 +96,7 @@ if(isset($_POST['submit'])){
         <h1>Sign Up</h1>
         <p>Please fill in this form to create an account.</p>
         <form method="post">
-        <label><b>Name name</b></label>
+        <label><b>Name</b></label>
         <input   id="regex"
                  pattern="[^0-9][a-zA-Z0-9\s][^0-9]+" type="text" placeholder="Enter name" name="name"  required>
         <label><b>Email</b></label>
@@ -101,10 +110,6 @@ if(isset($_POST['submit'])){
 
         <label><b>Repeat Password</b></label>
         <input type="password" id="regex" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Repeat Password" name="psw-repeat" required>
-
-        <label>
-            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-        </label>
 
         <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 

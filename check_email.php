@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: AZ
- * Date: 31/01/2019
- * Time: 1:36 PM
- */
-
 
 require "server/functions.php";
 $e = $_REQUEST["e"];
