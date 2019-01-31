@@ -5,12 +5,10 @@ include "server/db_connection.php";
 $error_msg = '';
 global $con;
 if(isset($_POST['submit'])) {
-
     $email = $_POST['L_email'];
     if (!preg_match("/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/", $email)) {
-       // echo "wrong pattren";
+        // echo "wrong pattren";
     }
-
     $email = $_POST['L_email'];
     $pass = $_POST['L_password'];
     $sel_user = "select * from login where L_email='$email' AND L_password='$pass'";
@@ -33,10 +31,6 @@ if(isset($_POST['submit'])) {
         echo "correct";
     }
 }
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
