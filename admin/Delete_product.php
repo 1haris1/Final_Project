@@ -1,4 +1,7 @@
 <?php
+if(!isset($_SESSION['user_email'])){
+    header('location: login.php?not_admin=You are not Admin!');
+}
 require "../server/db_connection.php";
 if(isset($_GET['del_pro'])){
     $del_id = $_GET['del_pro'];
