@@ -1,3 +1,28 @@
+<?php
+include "server/Functions.php";
+include "server/db_connection.php";
+
+global $con;
+if(isset($_POST['submit'])) {
+//getting text data from the fields
+
+    $id = $_POST['id'];
+    $email = $_POST['email'];
+    $password = $_POST['psw'];
+
+    $register_user = "insert into login (L_id, L_email,L_password) 
+                  VALUES ('$id','$email','$password');";
+
+    $insert_user = mysqli_query($con, $register_user);
+    if ($insert_user) {
+        header("location: " . $_SERVER['PHP_SELF']);
+    }
+
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,13 +55,13 @@
 <body>
 <?php
 include "templates/header.php";
-include "server/Functions.php";
+
 
 if(isset($_POST['submit'])){
 
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $pwd1 = $_POST['pwd'];
+    $pwd1 = $_POST['psw'];
     $pwd2 = $_POST['psw-repeat'];
 
     if (!preg_match("/[^0-9][a-zA-Z0-9\s][^0-9]+/",$name)) {
@@ -61,7 +86,7 @@ if(isset($_POST['submit'])){
     <div class="container">
         <h1>Sign Up</h1>
         <p>Please fill in this form to create an account.</p>
-
+        <form method="post">
         <label><b>Name name</b></label>
         <input   id="regex"
                  pattern="[^0-9][a-zA-Z0-9\s][^0-9]+" type="text" placeholder="Enter name" name="name"  required>
@@ -88,6 +113,7 @@ if(isset($_POST['submit'])){
             <button type="submit" name="submit" class="signupbtn">Sign Up</button>
         </div>
     </div>
+    </form>
 </div>
 <?php
 include "templates/footer.php";
