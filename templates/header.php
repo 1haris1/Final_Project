@@ -1,4 +1,23 @@
+
 <header>
+    <script>
+        function checkSearch(str) {
+            if (str.length == 0) {
+                return;
+            } else {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("content").innerHTML = this.responseText;
+                    }
+                };
+                xmlhttp.open("GET", "check_Search.php?search=" + str, true);
+                xmlhttp.send();
+                //document.getElementById('hint').innerHTML = 'loading...';
+            }
+        }
+    </script>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
         <a class="navbar-brand"> <span style="color:green;"> Perfect</span> Dressing</a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false" >
@@ -23,7 +42,9 @@
                 </li>
             </ul>
             <form class="form-check-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search Dress" aria-label="Search">
+                <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search Dress"
+                       aria-label="Search" onkeyup="checkSearch(this.value)">
+
                 <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
