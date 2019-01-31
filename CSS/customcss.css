@@ -200,7 +200,7 @@ header .list{
     font-size: initial;
     color: #f5e8e8;
 }
-.data{
+.data:hover{
     border: 1px solid gray;
     box-shadow: -1px 1px 20px 11px #197d6b;
 }
