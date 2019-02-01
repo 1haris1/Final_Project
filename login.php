@@ -33,6 +33,32 @@ if(isset($_POST['submit'])) {
         header('location:index.php?name='.$user_name);
     }
 }
+if(isset($_POST['admin'])) {
+    $email = $_POST['L_email'];
+    if (!preg_match("/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/", $email)) {
+        // echo "wrong pattren";
+    }
+    $email = $_POST['L_email'];
+    $pass = $_POST['L_password'];
+    $sel_user = "select * from admin where a_email='$email' AND a_pass='$pass'";
+    $run_user = mysqli_query($con, $sel_user);
+    $check_user = mysqli_num_rows($run_user);
+    if($check_user==0){
+        $error_msg = 'Password or Email is wrong, try again';
+    }
+    else{
+        $_SESSION['a_email'] = $email;
+//        echo $_SESSION['L_email'];
+        if(!empty($_POST['remember'])) {
+            setcookie('L_email', $email, time() + (10 * 365 * 24 * 60 * 60));
+            setcookie('L_password', $pass, time() + (10 * 365 * 24 * 60 * 60));
+        } else {
+            setcookie('L_email','' );
+            setcookie('L_password', '');
+        }
+        header('location:admin/admin_page.php?name='.$user_name);
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -82,7 +108,10 @@ include "templates/header.php";
             <div>
                 <label id="rem"> <input type="radio" value="re" name="remember" >Remember me</label>
             </div>
-            <button type="submit" class="btn btn-success" name="submit">Sign in</button>
+            <div>
+                <button style="max-width: 27%" type="submit" class="btn btn-success" name="submit">Sign in</button><br>
+                <button style="max-width: 27%" type="submit" class="btn btn-success" name="admin">Admin</button>
+            </div>
         </form><br>
         <div id="for">
             <a href="forget_pw.php">Forget Password?</a>
