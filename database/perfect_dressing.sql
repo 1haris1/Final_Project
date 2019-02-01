@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 31, 2019 at 09:50 PM
+-- Generation Time: Feb 01, 2019 at 01:57 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 5.6.34
 
@@ -21,6 +21,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `perfect_dressing`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `a_id` int(255) NOT NULL,
+  `a_email` varchar(50) NOT NULL,
+  `a_pass` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`a_id`, `a_email`, `a_pass`) VALUES
+(1, 'zain@perfect.com', 'A123');
 
 -- --------------------------------------------------------
 
@@ -125,7 +144,8 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`L_id`, `L_email`, `L_password`) VALUES
-(1, 'za97544@gmail.com', 'Ali12345');
+(1, 'za97544@gmail.com', 'Ali12345'),
+(2, 'harissheikh123@gmail.com', 'Has456123');
 
 -- --------------------------------------------------------
 
@@ -145,11 +165,18 @@ CREATE TABLE `register` (
 --
 
 INSERT INTO `register` (`U_id`, `Uname`, `Uemail`, `Upass`) VALUES
-(2, 'Zain Ali', 'za97544@gmail.com', 'Ali12345');
+(2, 'Zain Ali', 'za97544@gmail.com', 'Ali12345'),
+(3, 'haris', 'harissheikh123@gmail.com', 'Has456123');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`a_id`);
 
 --
 -- Indexes for table `dress_brands`
@@ -186,6 +213,12 @@ ALTER TABLE `register`
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `a_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `dress_brands`
 --
 ALTER TABLE `dress_brands`
@@ -207,13 +240,13 @@ ALTER TABLE `dress_product`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `L_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `L_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `register`
 --
 ALTER TABLE `register`
-  MODIFY `U_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `U_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
